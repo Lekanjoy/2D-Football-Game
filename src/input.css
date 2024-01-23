@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-tap-highlight-color: transparent;
+  }
+  canvas{
+    border: 2px solid white;
+  }
+  
+  .overlay-modal{
+    display: none;
+  }
+  
+  .showModal{
+    display: flex;
+  }
+
+@layer utilities {
+
+  .screenBtn{
+    @apply border p-2 w-fit bg-[rgba(225,225,225,0.4)] rounded
+  }
+
+}
+
