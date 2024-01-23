@@ -1,0 +1,14 @@
+{
+  "name": "2d-football",
+  "version": "1.0.0",
+  "description": "This repository contains the code for a football game built using the HTML5 canvas. The game is played on a virtual football field, and the user controls the movement of the football using arrow keys or on-screen buttons. The objective of the game is to score goals by kicking the football into the opponent's goalpost.",
+  "main": "main.js",
+  "scripts": {
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
