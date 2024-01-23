@@ -26,11 +26,16 @@ const toggleSound = () => {
 
 soundBtn.addEventListener("click", toggleSound);
 
+// Show Tutorial screen
+let tutorialScreen = document.getElementsByClassName('tutorial')
+let startPlayingBtn = document.getElementById('startPlayingBtn')
+startPlayingBtn.addEventListener('click', () => {
+  tutorialScreen[0].style.display = 'none'
+})
+
 const canvas = document.getElementById("footballCanvas");
 const ctx = canvas.getContext("2d");
 
-let canvasWidth = window.innerWidth;
-let canvasHeight = window.innerHeight;
 
 // Game Elements
 const footballFieldColor = "green";

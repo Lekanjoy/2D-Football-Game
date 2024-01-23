@@ -24,7 +24,7 @@ npm run watch & npm run dev
 ```
 6. Then go to 
 ```
-http://localhost:5173/src/index.html
+http://localhost:5173/
 ```
 in your web browser .
 
@@ -32,7 +32,7 @@ in your web browser .
 
 To play the game, follow these steps:
 
-1. Open the `index.html` file in your web browser.
+1. Open the `index.html` file in your desktop web browser as this game is best suited for larger screens.
 2. Use the arrow keys or on-screen buttons or drag the ball to any direction to move the football.
 3. Try to score goals by kicking the football into the opponent's goalpost.
 4. The game ends when one team scores 5 goals.
@@ -81,3 +81,11 @@ Here is a step-by-step explanation of the code:
 - The football is drawn using `drawBall()`.
 - The goalposts are drawn using `drawGoalPost()`.
 - The scores are displayed at the top left corner of the screen using `showScores()`,
+
+
+### Challenges / Limitations
+There were several challenges encountered during this project:
+- Adding sounds: Implementing audio was more difficult than expected due to browser limitations. Specifically, chrome does not support audio autoplay in some instance, so I had to make the game sound off until the user gives permission to turn it on.
+- Collision detection: Detecting when the ball hits either goalpost or the edge of the field was tricky as it required precise calculations involving vectors.I implemented a simple collision detection calculation that checks if the distance between the center of the ball and one of the posts or the edges is less than half the radius of the ball. If so, a score is awarded to the team whose post was hit and the ball's velocity is reversed.
+
+Overall, developing this game from scratch was an enjoyable experience but presented some challenges that made me research more on HTML5 canvas especially by using the MDN documentation [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas) .

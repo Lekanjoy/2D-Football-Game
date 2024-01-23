@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +13,7 @@
   }
   canvas{
     border: 2px solid white;
+
   }
   
   .overlay-modal{
@@ -25,7 +27,7 @@
 @layer utilities {
 
   .screenBtn{
-    @apply border p-2 w-fit bg-[rgba(225,225,225,0.4)] rounded
+    @apply border p-2 w-fit bg-black rounded
   }
 
 }
