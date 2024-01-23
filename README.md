@@ -21,7 +21,9 @@ or download the repository.
 5. Once installation is complete, open the folder and  start the server by running
 ```
 npm run watch
-``` to run the watch command for the tailwind classes and then open run the html file with the live server extension.
+```
+to run the watch command for the tailwind classes and then open run the html file with the live server extension.
+
 6. Then go to 
 ```
 http://localhost:5500/
