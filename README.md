@@ -11,15 +11,18 @@ To run the game on your local machine:
 git clone https://github.com/Lekanjoy/2D-Football-Game.git
 ```
 or download the repository.
+
+2. Install NodeJS if it is not installed already from [here](https://nodejs.org/en/download/).
+
 3. Navigate to the directory where you saved the project files (e.g
 `cd /path/to/2D-Football-Game`).
-4. Install NodeJS if it is not installed already from [here](https://nodejs.org/en/download/).
-5. Run `npm install` in the terminal to install all required dependencies.
-6. Once installation is complete, open the folder and  start the server by running
+ 
+4. Run `npm install` in the terminal to install all required dependencies.
+5. Once installation is complete, open the folder and  start the server by running
 ```
 npm run watch & npm run dev
 ```
-7. Then go to 
+6. Then go to 
 ```
 http://localhost:5173/src/index.html
 ```
