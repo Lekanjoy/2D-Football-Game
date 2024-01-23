@@ -40,10 +40,10 @@ To play the game, follow these steps:
 ### Demo / Screenshots
 
 And here are some screenshots:
-![Home](./public/home.png)
-![Home Page with sound on](./public/home-with-sound.png)
-![Home with team scores](./public/home-with-scores.png)
-![Home page showing congrats modal](./public/home-with-congratsModal.png)
+![Home](./assets/home.png)
+![Home Page with sound on](./assets/home-with-sound.png)
+![Home with team scores](./assets/home-with-scores.png)
+![Home page showing congrats modal](./assets/home-with-congratsModal.png)
 
 ### Code Overview
 
