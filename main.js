@@ -4,6 +4,27 @@
 
 const modal = document.getElementById("overlay-modal");
 const playAgain = document.getElementById("playAgain");
+const soundBtn = document.getElementById("soundBtn");
+const gameSound = document.getElementById("gameSound");
+const goalSound = document.getElementById("goalSound");
+const congratSound = document.getElementById("congratSound");
+
+// Toggle Game Sound
+let isPlaying = false;
+
+const toggleSound = () => {
+  isPlaying ? (soundBtn.textContent = "🔇") : (soundBtn.textContent = "🔊");
+  if (isPlaying) {
+    gameSound.pause();
+    goalSound.pause();
+    isPlaying = false;
+  } else {
+    gameSound.play();
+    isPlaying = true;
+  }
+};
+
+soundBtn.addEventListener("click", toggleSound);
 
 const canvas = document.getElementById("footballCanvas");
 const ctx = canvas.getContext("2d");
@@ -109,7 +130,7 @@ function handleKeyUp(e) {
 // User Interaction with onscreen keyboard
 let screenBtns = document.querySelectorAll(".screenBtn");
 screenBtns.forEach((btn) => {
-    // Handle onScreeen arrow key click to move the football
+  // Handle onScreeen arrow key click to move the football
   btn.addEventListener("mousedown", (e) => {
     switch (e.target.innerHTML) {
       case "⬆️":
@@ -142,6 +163,40 @@ screenBtns.forEach((btn) => {
   });
 });
 
+// User Interaction with Football drag
+let isMouseDown = false;
+let lastMouseX;
+let lastMouseY;
+
+canvas.addEventListener("mousedown", (e) => {
+  isMouseDown = true;
+  lastMouseX = e.clientX;
+  lastMouseY = e.clientY;
+});
+
+canvas.addEventListener("mouseup", (e) => {
+  isMouseDown = false;
+});
+
+canvas.addEventListener("mousemove", (e) => {
+  if (isMouseDown) {
+    const dx = e.clientX - lastMouseX;
+    const dy = e.clientY - lastMouseY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance > 5) {
+      const unitVectorX = dx / distance;
+      const unitVectorY = dy / distance;
+
+      football.dx = football.speed * unitVectorX;
+      football.dy = football.speed * unitVectorY;
+
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
+    }
+  }
+});
+
 // Goal System
 function checkGoal() {
   for (let i = 0; i < goalPosts.length; i++) {
@@ -154,6 +209,7 @@ function checkGoal() {
     ) {
       // Goal scored
       scores[i]++;
+      isPlaying ? goalSound.play() : goalSound.pause();
       resetFootball();
       updateScores();
 
@@ -161,11 +217,13 @@ function checkGoal() {
       const scoreText = document.getElementById("scoreText");
       if (scores[0] === 5) {
         scoreText.textContent = `Home team won ${scores[0]}-${scores[1]} `;
+        isPlaying ? congratSound.play() : congratSound.pause();
         modal.classList.add("showModal");
         football.speed = 0;
         resetGame();
       } else if (scores[1] === 5) {
         scoreText.textContent = `Away team won ${scores[0]}-${scores[1]}`;
+        isPlaying ? congratSound.play() : congratSound.pause();
         modal.classList.add("showModal");
         football.speed = 0;
         resetGame();
@@ -174,7 +232,7 @@ function checkGoal() {
   }
 }
 
-// Remove CONGRATULATORY modal and update ball speed
+// Remove Congratulatory modal and update ball speed
 playAgain.addEventListener("click", () => {
   modal.classList.remove("showModal");
   football.speed = 5;
@@ -312,6 +370,7 @@ function resetGame() {
   scores = [0, 0];
   resetFootball();
   updateScores();
+  isPlaying ? goalSound.play() : goalSound.pause();
 }
 
 // Initial score display

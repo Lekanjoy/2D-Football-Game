@@ -1,22 +1,36 @@
- ## 2D Football Game with Autoregressive Language Model
+ ## 2D Football Game
 
 This repository contains the code for a football game built using the HTML5 canvas. The game is played on a virtual football field, and the user controls the movement of the football using arrow keys or on-screen buttons. The objective of the game is to score goals by kicking the football into the opponent's goalpost.
 
-### Prerequisites
+### Getting Started
 
-To run the game, you will need:
+To run the game on your local machine:
 
-- A modern web browser (e.g., Chrome, Firefox, Safari)
-- An internet connection
+1. Clone this repository to your computer by running `git clone https://github.com/Lekanjoy/2D-Football-Game.git` or download.
+2. Navigate to the directory where you saved the project files (e.g
+`cd /path/to/2D-Football-Game`).
+3. Install NodeJS if it is not installed already from [here](https://nodejs.
+org/en/download/).
+4. Run `npm install` in the terminal to install all required dependencies.
+5. Once installation is complete, open the folder and  start the server by running `npm run watch & npm run dev`.
+6. The game should now be accessible at `http://localhost:5173/src/index.html` in your web browser.
 
 ### Instructions
 
 To play the game, follow these steps:
 
 1. Open the `index.html` file in your web browser.
-2. Use the arrow keys or on-screen buttons to move the football.
+2. Use the arrow keys or on-screen buttons or drag the ball to any direction to move the football.
 3. Try to score goals by kicking the football into the opponent's goalpost.
 4. The game ends when one team scores 5 goals.
+
+### Demo / Screenshots
+
+And here are some screenshots:
+![Home](./public/home.png)
+![Home Page with sound on](./public/home-with-sound.png)
+![Home with team scores](./public/home-with-scores.png)
+![Home page showing congrats modal](./public/home-with-congratsModal.png)
 
 ### Code Overview
 
